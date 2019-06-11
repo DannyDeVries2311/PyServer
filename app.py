@@ -47,7 +47,6 @@ def addData():
 def getAllData():
     sql="""SELECT * FROM testtable"""
     conn = None
-    data =   {}
     dataList = []
 
 
@@ -76,8 +75,7 @@ def getAllData():
     finally:
         if conn is not None:
             conn.close()
-        data.update({'data': dataList})
-        return jsonify(data)
+        return jsonify(dataList)
 
 if __name__ == '__main__':
     app.run(debug=True)
